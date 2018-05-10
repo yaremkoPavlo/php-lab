@@ -31,4 +31,56 @@ function compareNumber($a)
 echo compareNumber(5),
     "\n",
     compareNumber(0),
-    "\n";
+    "\n",
+    compareNumber(-2),
+    "\n",
+    compareNumber(3),
+    "\n\n";
+
+/****************/
+
+$min = rand(0, 59);
+
+if ($min < 15) {
+    echo 'First';
+} elseif ($min < 30) {
+    echo 'Second';
+} elseif ($min < 45) {
+    echo 'Third';
+} else {
+    echo 'Fourth';
+}
+
+echo "\n\n";
+
+/****************/
+
+$year = 2000;
+
+function isIntercalaryYear($year)
+{
+    if (($year % 4 === 0 && $year % 100 !== 0) || ($year % 400 === 0)) {
+        return 'yes';
+    } else {
+        return 'no';
+    }
+}
+
+echo isIntercalaryYear($year);
+echo "\n\n";
+
+/*****************/
+
+$strNum = '385934';
+
+function summThreeNumber($str)
+{
+    return intval($str[0]) + intval($str[1]) + intval($str[2]);
+}
+
+$num1 = substr($strNum, 0, 3);
+$num2 = substr($strNum, 3);
+
+if (summThreeNumber($num1) === summThreeNumber($num2)) {
+    echo 'you have lucky number!';
+}
