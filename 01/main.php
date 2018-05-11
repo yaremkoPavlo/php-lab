@@ -19,6 +19,10 @@ echo $var[0],
 
 /****************/
 
+/**
+ * @param $a:integer
+ * @return string
+ */
 function compareNumber($a)
 {
     if ($a > 0 && $a < 5) {
@@ -73,6 +77,11 @@ echo "\n\n";
 
 $strNum = '385934';
 
+/**
+ * @param $str:string
+ * @param $i:integer
+ * @return integer
+ */
 function summThreeNumber($str, $i)
 {
     return intval($str[$i]) + intval($str[$i + 1]) + intval($str[$i + 2]);
