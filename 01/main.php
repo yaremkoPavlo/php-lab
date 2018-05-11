@@ -73,14 +73,15 @@ echo "\n\n";
 
 $strNum = '385934';
 
-function summThreeNumber($str)
+function summThreeNumber($str, $i)
 {
-    return intval($str[0]) + intval($str[1]) + intval($str[2]);
+    return intval($str[$i]) + intval($str[$i + 1]) + intval($str[$i + 2]);
 }
 
-$num1 = substr($strNum, 0, 3);
-$num2 = substr($strNum, 3);
-
-if (summThreeNumber($num1) === summThreeNumber($num2)) {
+if (summThreeNumber($strNum, 0) === summThreeNumber($strNum, 3)) {
     echo 'you have lucky number!';
+} else {
+    echo 'is it no lucky number :(';
 }
+
+echo "\n";
