@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @param $name:string
+ * @return string
+ */
 function madeBandName($name)
 {
     if ($name[0] === $name[strlen($name) - 1]) {
@@ -10,8 +14,11 @@ function madeBandName($name)
 
     return $newName;
 }
-var_dump(madeBandName('alask'));
 
+/**
+ * @param $text:string
+ * @return string
+ */
 function changeText($text)
 {
     $new = '';
@@ -21,5 +28,3 @@ function changeText($text)
 
     return $new;
 }
-
-var_dump(changeText('ATTGC'));

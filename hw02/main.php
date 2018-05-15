@@ -1,41 +1,13 @@
 <?php
-/*'var_test_text' в 'varTestText'*/
 
-/**
- * @param $text:string
- * @return string
- */
-function changeText($text)
-{
-    $arr = explode('_', $text);
-    $arr = array_map(function ($el) {return ucfirst($el);}, $arr);
-    $str = join('', $arr);
-    return lcfirst($str);
-}
-
+include 'function.php';
+include 'extra.php';
 
 $text = 'var_test_text';
-
 echo changeText($text);
 echo "\n\n";
 
 /******************/
-
-/**
- * @param $str:string
- * @return string
- */
-function mb_reverse($str)
-{
-    $newStr = '';
-    $arr = preg_split('##u', $str, null, PREG_SPLIT_NO_EMPTY);
-
-    for ($i = count($arr) - 1; $i >= 0; $i--) {
-        $newStr .= $arr[$i];
-    }
-
-    return $newStr;
-}
 
 $str = 'ФЫВА олдж';
 $arr = mb_split(' ', $str);
@@ -66,3 +38,10 @@ foreach ($a as $value) {
 }
 
 var_dump($count);
+echo "\n";
+
+/******** extra task *********/
+
+var_dump(madeBandName('alask'));
+echo "\n";
+var_dump(changeText('ATTGC'));
