@@ -17,14 +17,12 @@ function madeBandName($name)
 
 /**
  * @param $text:string
+ * @param $map:array
  * @return string
  */
-function changeText($text)
+function changeTextMap($text, $map)
 {
-    $new = '';
-    $map = ['A' => 'T', 'C' => 'G'];
-    $pattern = ['/A/', '/T/', '/C/', '/G/'];
-    $replacement = ['T', 'A', 'G', 'C'];
-
-    return $new;
+    $flipMap = array_flip($map);
+    $fullMap = array_merge($map, $flipMap);
+    return strtr($text, $fullMap);
 }

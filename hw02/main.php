@@ -44,4 +44,6 @@ echo "\n";
 
 var_dump(madeBandName('alask'));
 echo "\n";
-var_dump(changeText('ATTGC'));
+
+$map = ['A' => 'T', 'C' => 'G'];
+var_dump(changeTextMap('ATTGC', $map));
