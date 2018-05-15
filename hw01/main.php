@@ -1,5 +1,8 @@
 <?php
 
+include 'function.php';
+include 'extra.php';
+
 $text1 = 'Hello';
 $text2 = 'World';
 
@@ -9,7 +12,6 @@ echo $text1 . ' ' . $text2,
 /****************/
 
 $var = 'hello';
-
 echo $var[0],
     "\n",
     $var[1],
@@ -18,19 +20,6 @@ echo $var[0],
     "\n\n";
 
 /****************/
-
-/**
- * @param $a:integer
- * @return string
- */
-function compareNumber($a)
-{
-    if ($a > 0 && $a < 5) {
-        return 'virno';
-    } else {
-        return 'nevirno';
-    }
-}
 
 echo compareNumber(5),
     "\n",
@@ -44,53 +33,21 @@ echo compareNumber(5),
 /****************/
 
 $min = rand(0, 59);
-
-if ($min < 15) {
-    echo 'First';
-} elseif ($min < 30) {
-    echo 'Second';
-} elseif ($min < 45) {
-    echo 'Third';
-} else {
-    echo 'Fourth';
-}
-
+echo getQuarter($min);
 echo "\n\n";
 
 /****************/
 
 $year = 2000;
-
-function isIntercalaryYear($year)
-{
-    if (($year % 4 === 0 && $year % 100 !== 0) || ($year % 400 === 0)) {
-        return 'yes';
-    } else {
-        return 'no';
-    }
-}
-
-echo isIntercalaryYear($year);
+echo isLeapYear($year);
 echo "\n\n";
 
 /*****************/
 
 $strNum = '385934';
-
-/**
- * @param $str:string
- * @param $i:integer
- * @return integer
- */
-function summThreeNumber($str, $i)
-{
-    return intval($str[$i]) + intval($str[$i + 1]) + intval($str[$i + 2]);
-}
-
-if (summThreeNumber($strNum, 0) === summThreeNumber($strNum, 3)) {
-    echo 'you have lucky number!';
-} else {
-    echo 'is it no lucky number :(';
-}
-
+echo isLuckyNumber($strNum);
 echo "\n";
+
+/***** extra task ************/
+
+var_dump(compareCharacters("ZzZz", "ffPFF"));

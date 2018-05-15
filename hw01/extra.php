@@ -38,5 +38,3 @@ function getSumCharacterCode($ch)
     return $sum;
 
 }
-
-var_dump(compareCharacters("ZzZz", "ffPFF"));
