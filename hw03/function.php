@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @param array $arr
+ * @return array
+ */
 function duplicateValues($arr)
 {
     $newArr = array();
@@ -12,6 +16,11 @@ function duplicateValues($arr)
     return $newArr;
 }
 
+/**
+ * @param int $a
+ * @param int $b
+ * @return int
+ */
 function comparePrice($a, $b)
 {
     if ($a['price'] === $b['price']) {
@@ -20,6 +29,10 @@ function comparePrice($a, $b)
     return ($a['price'] < $b['price']) ? -1 : 1;
 }
 
+/**
+ * @param array $el
+ * @return bool
+ */
 function filterByTags($el)
 {
     if (!array_key_exists('tags', $el)) {
